@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DesignPatternDemo</string>
+    <string name="draw_circle">Draw Circle</string>
+    <string name="draw_rectangle">Draw Rectangle</string>
+    <string name="draw_square">Draw Square</string>
+    <string name="design_pattern_demo">Design Pattern Demo</string>
+</resources>
