@@ -1,4 +1,4 @@
-package com.example.org.designpatterndemo;
+package com.example.org.designpatterndemo.interfaces;
 
 import android.app.Activity;
 

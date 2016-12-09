@@ -1,7 +1,9 @@
-package com.example.org.designpatterndemo;
+package com.example.org.designpatterndemo.models;
 
 import android.app.Activity;
 import android.widget.Toast;
+
+import com.example.org.designpatterndemo.interfaces.Shape;
 
 /**
  * Draw Circle

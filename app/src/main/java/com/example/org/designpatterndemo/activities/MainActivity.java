@@ -1,15 +1,19 @@
-package com.example.org.designpatterndemo;
+package com.example.org.designpatterndemo.activities;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.org.designpatterndemo.R;
+import com.example.org.designpatterndemo.SingletonShapeObject;
+import com.example.org.designpatterndemo.interfaces.Shape;
+
 public class MainActivity extends Activity implements View.OnClickListener{
     Button btn_circle,btn_rectangle,btn_square;
-    Shape shapeCircle, shapeRectangle, shapeSquare;
-    ShapeFactory shapeFactory;
+    Shape shape;
     Activity mActivity;
+    SingletonShapeObject singletonShapeObject;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,8 +22,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
         mActivity = MainActivity.this;
         initializeView();
         setOnClickListener();
-
-        shapeFactory = new ShapeFactory();
+        singletonShapeObject = SingletonShapeObject.getInstance();
     }
 
     /**
@@ -45,19 +48,25 @@ public class MainActivity extends Activity implements View.OnClickListener{
         switch (v.getId()){
             case R.id.btn_circle:
                 // Object of circle and draw
-                shapeCircle = shapeFactory.getShape("CIRCLE");
-                shapeCircle.draw(mActivity);
+                drawShape(singletonShapeObject.CIRCLE);
                 break;
             case R.id.btn_rectangle:
                 // Object of rectangle and draw
-                shapeRectangle = shapeFactory.getShape("RECTANGLE");
-                shapeRectangle.draw(mActivity);
+                drawShape(singletonShapeObject.RECTANGLE);
                 break;
             case R.id.btn_square:
                 // Object of square and draw
-                shapeSquare = shapeFactory.getShape("SQUARE");
-                shapeSquare.draw(mActivity);
+                drawShape(singletonShapeObject.SQUARE);
                 break;
         }
+    }
+
+    /**
+     * Draw circle, rectangle, square
+     * @param shapeType
+     */
+    private void drawShape(String shapeType) {
+        shape = singletonShapeObject.getShape(shapeType);
+        shape.draw(mActivity);
     }
 }
