@@ -4,4 +4,5 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="mar_bottom">30dp</dimen>
     <dimen name="text_size">30sp</dimen>
+    <dimen name="dimen_margin_top">10dp</dimen>
 </resources>

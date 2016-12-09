@@ -1,6 +1,7 @@
 package com.example.org.designpatterndemo.activities;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,7 +11,7 @@ import com.example.org.designpatterndemo.SingletonShapeObject;
 import com.example.org.designpatterndemo.interfaces.Shape;
 
 public class MainActivity extends Activity implements View.OnClickListener{
-    Button btn_circle,btn_rectangle,btn_square;
+    Button btn_circle,btn_rectangle,btn_square,btnNext;
     Shape shape;
     Activity mActivity;
     SingletonShapeObject singletonShapeObject;
@@ -32,6 +33,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
         btn_circle = (Button)findViewById(R.id.btn_circle);
         btn_rectangle = (Button)findViewById(R.id.btn_rectangle);
         btn_square = (Button)findViewById(R.id.btn_square);
+        btnNext = (Button)findViewById(R.id.btnNext);
     }
 
     /**
@@ -41,6 +43,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
         btn_circle.setOnClickListener(this);
         btn_rectangle.setOnClickListener(this);
         btn_square.setOnClickListener(this);
+        btnNext.setOnClickListener(this);
     }
 
     @Override
@@ -57,6 +60,10 @@ public class MainActivity extends Activity implements View.OnClickListener{
             case R.id.btn_square:
                 // Object of square and draw
                 drawShape(singletonShapeObject.SQUARE);
+                break;
+            case R.id.btnNext:
+                Intent intent = new Intent(MainActivity.this,BuilderPatternActivity.class);
+                startActivity(intent);
                 break;
         }
     }

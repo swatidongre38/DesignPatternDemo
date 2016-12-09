@@ -4,4 +4,7 @@
     <string name="draw_rectangle">Draw Rectangle</string>
     <string name="draw_square">Draw Square</string>
     <string name="design_pattern_demo">Design Pattern Demo</string>
+    <string name="next">Next</string>
+    <string name="veg_meal">Veg Meal</string>
+    <string name="builder_pattern_demo">Builder Pattern Demo</string>
 </resources>
